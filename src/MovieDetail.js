@@ -1,8 +1,8 @@
 /* eslint react/no-did-mount-set-state: 0 */
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Poster } from './Movie';
 import Overdrive from 'react-overdrive';
+import { Poster } from './Movie';
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
@@ -14,7 +14,7 @@ class MovieDetail extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=6f189bc3887975f19dd52bd3a24b36d7&language=en-US`);
+      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=6f189bc3887975f19dd52bd3a24b36d7&language=en-US`); // eslint-disable-line
       const movie = await res.json();
       this.setState({
         movie,
